@@ -3,7 +3,7 @@
         <active>true</active>
         <copied_from display_value="Record Insert">dcb70daf1bc02510eeeded74604bcb7e</copied_from>
         <description>Insert a record into 'x_58872_needit_needit' with the following values:
-When needed = 2022-12-31 16:49:58
+When needed = 2023-01-07 11:46:15
 and Requested for = {{Step 1: Create a User.User}}
 and Requested for email = {{Step 1: Create a User.User.First name}}.{{Step 1: Create a User.User.Last name}}@example.com
 Confirm the record was not inserted</description>
@@ -11,7 +11,7 @@ Confirm the record was not inserted</description>
         <inputs/>
         <inputs/>
         <mugshots_cache_json/>
-        <notes/>
+        <notes>Bei Bedarf liegt das Datum in der Vergangenheit: javascript:gs.daysAgo(3)</notes>
         <order>2</order>
         <snapshot/>
         <step_config display_value="Record Insert">14872288df60220062fe6c7a4df26319</step_config>
@@ -19,14 +19,14 @@ Confirm the record was not inserted</description>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-03 15:40:51</sys_created_on>
         <sys_id>e3ca19631b442510eeeded74604bcb0e</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Record Insert</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_atf_step_e3ca19631b442510eeeded74604bcb0e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-01-03 15:49:58</sys_updated_on>
+        <sys_updated_on>2023-01-10 10:46:15</sys_updated_on>
         <table>x_58872_needit_needit</table>
         <test display_value="When needed - Past">9bca51631b442510eeeded74604bcbbc</test>
         <timeout/>
