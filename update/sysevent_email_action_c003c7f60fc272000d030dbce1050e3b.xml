@@ -35,11 +35,33 @@
         <message/>
         <message_html><![CDATA[<p>Dear ${assigned_to.first_name},</p>
 <p>An overdue&nbsp;NeedIt Task is assigned to you:</p>
-<p>Number: ${number}<br />Short description: ${short_description}</p>
+<table style="height: 73px; width: 56.2084%; border-collapse: collapse; border-style: double; border-color: #f01132;" border="2" cellspacing="1" cellpadding="12">
+<tbody>
+<tr style="height: 13px;">
+<td style="width: 50%; height: 13px;">Number:</td>
+<td style="width: 50%; height: 13px;">${number}</td>
+</tr>
+<tr style="height: 16px;">
+<td style="width: 50%; height: 16px;">Short description:</td>
+<td style="width: 50%; height: 16px;">${short_description}</td>
+</tr>
+</tbody>
+</table>
 <p>Please complete this task as soon as possible.</p>
+<p>CountOverdueNeedItTasksAssignedTo:</p>
 <p>${mail_script:CountOverdueNeedItTasksAssignedTo}</p>
+<p>FindBirthdayOnTheSameDay:</p>
+<p>${mail_script:FindBirthdayOnTheSameDay}</p>
+<p>AddCC:</p>
+<p>${mail_script:AddCC}</p>
+<p>Triggering:</p>
+<p>Triggering record: ${URI}</p>
+<p>Same triggering record: ${URI_REF}</p>
+<p>Releated record: ${u_employee.URI}</p>
+<p>Same releated record: ${u_employee.URI_REF}</p>
 <p>&nbsp;</p>
-<p>Click here to view the&nbsp;NeedIt Task record: ${URI_REF}</p>]]></message_html>
+<p>Click here to view the&nbsp;NeedIt Task record: ${URI_REF}</p>
+<p>&nbsp;</p>]]></message_html>
         <message_list/>
         <message_text/>
         <name>Overdue NeedIt Task</name>
@@ -61,7 +83,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c003c7f60fc272000d030dbce1050e3b</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>Overdue NeedIt Task</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -69,7 +91,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sysevent_email_action_c003c7f60fc272000d030dbce1050e3b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-28 14:38:16</sys_updated_on>
+        <sys_updated_on>2023-03-17 15:22:53</sys_updated_on>
         <sys_version>2</sys_version>
         <template/>
         <type>email</type>
