@@ -14,13 +14,15 @@
         <digest_from/>
         <digest_html/>
         <digest_reply_to/>
-        <digest_separator_html/>
-        <digest_separator_text/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
         <digest_subject/>
         <digest_template/>
         <digest_text/>
         <digestable>false</digestable>
-        <event_name>x_58872_needit.overdueNeedItTask</event_name>
+        <event_name>activate.life.cycle.migration</event_name>
         <event_parm_1>false</event_parm_1>
         <event_parm_2>false</event_parm_2>
         <exclude_delegates>false</exclude_delegates>
@@ -33,67 +35,65 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Dear ${assigned_to.first_name},</p>
-<p>An overdue&nbsp;NeedIt Task is assigned to you:</p>
-<table style="height: 73px; width: 56.2084%; border-collapse: collapse; border-style: double; border-color: #f01132;" border="2" cellspacing="1" cellpadding="12">
-<tbody>
-<tr style="height: 13px;">
-<td style="width: 50%; height: 13px;">Number:</td>
-<td style="width: 50%; height: 13px;">${number}</td>
-</tr>
-<tr style="height: 16px;">
-<td style="width: 50%; height: 16px;">Short description:</td>
-<td style="width: 50%; height: 16px;">${short_description}</td>
-</tr>
-</tbody>
-</table>
-<p>Please complete this task as soon as possible.</p>
-<p>CountOverdueNeedItTasksAssignedTo:</p>
-<p>${mail_script:CountOverdueNeedItTasksAssignedTo}</p>
-<p>FindBirthdayOnTheSameDay:</p>
-<p>${mail_script:FindBirthdayOnTheSameDay}</p>
-<p>AddCC:</p>
-<p>${mail_script:AddCC}</p>
-<p>Triggering:</p>
-<p>Triggering record: ${URI}</p>
-<p>Same triggering record: ${URI_REF}</p>
-<p>Releated record: ${u_employee.URI}</p>
-<p>Same releated record: ${u_employee.URI_REF}</p>
-<p>&nbsp;</p>
-<p>Click here to view the&nbsp;NeedIt Task record: ${URI_REF}</p>
-<p>&nbsp;</p>]]></message_html>
+        <message_html><![CDATA[<div>Vermisste Hardware</div>
+<div>&nbsp;</div>
+<div>Sehr geehrte(r) ${assigned_to.manager.last_name} ${assigned_to.manager.first_name},</div>
+<div>&nbsp;</div>
+<div>die folgende Hardware wurde nach Austritt von ${assigned_to.first_name} ${assigned_to.last_name}</div>
+<div>bisher nicht zur&uuml;ckgesschickt, daher wird Ihnen diese nun namentlich zugeordnet:</div>
+<div>&nbsp;</div>
+<div>Flow Variables</div>
+<div>➛</div>
+<div>Hardware</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>Bitte senden Sie die Hardware nun dringend zur&uuml;ck an das Asset Lager</div>
+<div>&nbsp;</div>
+<div>Experis GmbH</div>
+<div>Albert-Einstein-Stra&szlig;e 28-30</div>
+<div>63128 Dietzenbach</div>
+<div>&nbsp;</div>
+<div>Im ServiceNow Portal k&ouml;nnen Sie unter &bdquo;Meine Assets&ldquo; den Status der Hardware einsehen, die Ihnen derzeit zugeordnet ist.&nbsp;</div>
+<div>&nbsp;</div>
+<div><a href="https://proserviade.service-now.com/csm?id=csm_my_assets">My Assets - Customer Support (service-now.com)</a></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>Mit freundlichen Gr&uuml;&szlig;en</div>
+<div>IT Service Desk Team</div>]]></message_html>
         <message_list/>
         <message_text/>
-        <name>Overdue NeedIt Task</name>
+        <name>Vermisste Hardware</name>
         <omit_watermark>false</omit_watermark>
         <order>100</order>
         <push_message_only>false</push_message_only>
         <recipient_fields>assigned_to</recipient_fields>
         <recipient_groups/>
-        <recipient_users>02826bf03710200044e0bfc8bcbe5d5e</recipient_users>
+        <recipient_users/>
         <reply_to/>
         <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>Overdue NeedIt Task: ${number}</subject>
+        <subject>Vermisste Hardware</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-04-14 19:31:52</sys_created_on>
+        <sys_created_on>2023-03-20 13:21:33</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>c003c7f60fc272000d030dbce1050e3b</sys_id>
-        <sys_mod_count>31</sys_mod_count>
-        <sys_name>Overdue NeedIt Task</sys_name>
+        <sys_id>dc439c841b3d2150eeeded74604bcbca</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Vermisste Hardware</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sysevent_email_action_c003c7f60fc272000d030dbce1050e3b</sys_update_name>
+        <sys_update_name>sysevent_email_action_dc439c841b3d2150eeeded74604bcbca</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-20 09:18:26</sys_updated_on>
+        <sys_updated_on>2023-03-20 14:59:13</sys_updated_on>
         <sys_version>2</sys_version>
-        <template/>
+        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
         <weight>0</weight>
     </sysevent_email_action>
