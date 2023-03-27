@@ -2,11 +2,10 @@
     <sys_hub_flow action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
-        <active>true</active>
+        <active>false</active>
         <annotation/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
-        <compiler_build>glide-rome-06-23-2021__patch1-hotfix1-09-15-2021_09-16-2021_1434.zip</compiler_build>
         <copied_from/>
         <copied_from_name/>
         <description>Update the Activity stream on a NeedIt Task record with the text from a received email.</description>
@@ -29,7 +28,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2c2f92082ff0011085f456e62799b601</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Update NeedIt Task on Reply</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -37,7 +36,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_hub_flow_2c2f92082ff0011085f456e62799b601</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-28 14:10:59</sys_updated_on>
+        <sys_updated_on>2023-03-23 14:18:20</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=2c2f92082ff0011085f456e62799b601"/>
@@ -64,6 +63,7 @@
         <sys_updated_on>2021-12-28 14:10:58</sys_updated_on>
         <target_table>x_58872_needit_needit_task</target_table>
     </sys_flow_email_trigger>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=2c2f92082ff0011085f456e62799b601"/>
     <sys_hub_trigger_instance action="delete_multiple" query="flow=2c2f92082ff0011085f456e62799b601^sys_idNOT IN4650e2882ff0011085f456e62799b6c6"/>
     <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
         <comment/>
@@ -126,6 +126,7 @@
         <value>receive_type=reply^subjectLIKEOverdue NeedIt Task</value>
         <variable display_value="Email Conditions">18010347c7312300f4eba1425a9763f7</variable>
     </sys_variable_value>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=2c2f92082ff0011085f456e62799b601"/>
     <sys_flow_cat_variable_model action="delete_multiple" query="id=2c2f92082ff0011085f456e62799b601^sys_idNOT INf82f92082ff0011085f456e62799b603"/>
     <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
         <id>2c2f92082ff0011085f456e62799b601</id>
@@ -138,6 +139,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-12-28 14:05:26</sys_updated_on>
     </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=f82f92082ff0011085f456e62799b603"/>
     <sys_hub_flow_input action="delete_multiple" query="model=2c2f92082ff0011085f456e62799b601^sys_idNOT IN4250e2882ff0011085f456e62799b6be,7d50e2882ff0011085f456e62799b69b,ce50e2882ff0011085f456e62799b6a4,ce50e2882ff0011085f456e62799b6a9,ce50e2882ff0011085f456e62799b6ae,ce50e2882ff0011085f456e62799b6b3,ce50e2882ff0011085f456e62799b6b8"/>
     <sys_hub_flow_input action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -709,6 +711,8 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=2c2f92082ff0011085f456e62799b601"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2c2f92082ff0011085f456e62799b601"/>
     <sys_hub_action_instance action="delete_multiple" query="flow=2c2f92082ff0011085f456e62799b601^sys_idNOT INd650e2882ff0011085f456e62799b6d9"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
@@ -716,7 +720,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent/>
         <comment/>
-        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
         <display_text/>
         <flow display_value="Update NeedIt Task on Reply">2c2f92082ff0011085f456e62799b601</flow>
         <order>1</order>
@@ -783,6 +786,12 @@
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
         <value>work_notes={{Inbound Email_1.body_text}}</value>
     </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d650e2882ff0011085f456e62799b6d9"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d650e2882ff0011085f456e62799b6d9"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=2c2f92082ff0011085f456e62799b601"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=2c2f92082ff0011085f456e62799b601"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=2c2f92082ff0011085f456e62799b601"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=2c2f92082ff0011085f456e62799b601"/>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_2c2f92082ff0011085f456e62799b601^sys_idNOT IN4a50e2882ff0011085f456e62799b6a8,4a50e2882ff0011085f456e62799b6ad,4a50e2882ff0011085f456e62799b6b2,4a50e2882ff0011085f456e62799b6b7,8250e2882ff0011085f456e62799b6a3,ca50e2882ff0011085f456e62799b6bc,ca50e2882ff0011085f456e62799b6c1"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>target_table_name</element>
@@ -797,11 +806,11 @@
         <sys_created_on>2021-12-28 14:10:43</sys_created_on>
         <sys_id>4a50e2882ff0011085f456e62799b6a8</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Target Table</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_2c2f92082ff0011085f456e62799b601_target_table_name_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-12-28 14:10:43</sys_updated_on>
         <url/>
@@ -820,11 +829,11 @@
         <sys_created_on>2021-12-28 14:10:43</sys_created_on>
         <sys_id>4a50e2882ff0011085f456e62799b6ad</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Body Text</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_2c2f92082ff0011085f456e62799b601_body_text_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-12-28 14:10:43</sys_updated_on>
         <url/>
@@ -843,11 +852,11 @@
         <sys_created_on>2021-12-28 14:10:43</sys_created_on>
         <sys_id>4a50e2882ff0011085f456e62799b6b2</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Subject</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_2c2f92082ff0011085f456e62799b601_subject_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-12-28 14:10:43</sys_updated_on>
         <url/>
@@ -866,11 +875,11 @@
         <sys_created_on>2021-12-28 14:10:43</sys_created_on>
         <sys_id>4a50e2882ff0011085f456e62799b6b7</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>User</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_2c2f92082ff0011085f456e62799b601_user_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-12-28 14:10:43</sys_updated_on>
         <url/>
@@ -889,11 +898,11 @@
         <sys_created_on>2021-12-28 14:10:43</sys_created_on>
         <sys_id>8250e2882ff0011085f456e62799b6a3</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Inbound Email</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_2c2f92082ff0011085f456e62799b601_inbound_email_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-12-28 14:10:43</sys_updated_on>
         <url/>
@@ -912,11 +921,11 @@
         <sys_created_on>2021-12-28 14:10:43</sys_created_on>
         <sys_id>ca50e2882ff0011085f456e62799b6bc</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Target Record</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_2c2f92082ff0011085f456e62799b601_target_record_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-12-28 14:10:43</sys_updated_on>
         <url/>
@@ -935,16 +944,19 @@
         <sys_created_on>2021-12-28 14:10:43</sys_created_on>
         <sys_id>ca50e2882ff0011085f456e62799b6c1</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>From address</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name/>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_2c2f92082ff0011085f456e62799b601_from_address_en</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-12-28 14:10:43</sys_updated_on>
         <url/>
         <url_target/>
     </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_2c2f92082ff0011085f456e62799b601"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_2c2f92082ff0011085f456e62799b601"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_2c2f92082ff0011085f456e62799b601"/>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=2c2f92082ff0011085f456e62799b601^sys_idNOT IN616066882ff0011085f456e62799b676"/>
     <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
         <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
@@ -963,6 +975,7 @@
         <sys_updated_on>2021-12-28 14:10:58</sys_updated_on>
         <trigger display_value="">296066882ff0011085f456e62799b675</trigger>
     </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=2c2f92082ff0011085f456e62799b601"/>
     <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
@@ -1066,6 +1079,7 @@
         <value/>
         <variable display_value="Order">60b307c7c7312300f4eba1425a97637e</variable>
     </sys_variable_value>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=116026882ff0011085f456e62799b6ec"/>
     <sys_flow_cat_variable_model action="delete_multiple" query="id=116026882ff0011085f456e62799b6ec^sys_idNOT IN116026882ff0011085f456e62799b6ed"/>
     <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
         <id>116026882ff0011085f456e62799b6ec</id>
@@ -1078,6 +1092,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-12-28 14:10:56</sys_updated_on>
     </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=116026882ff0011085f456e62799b6ed"/>
     <sys_hub_flow_input action="delete_multiple" query="model=116026882ff0011085f456e62799b6ec^sys_idNOT IN1d6066882ff0011085f456e62799b607,2d6066882ff0011085f456e62799b624,516066882ff0011085f456e62799b61b,696066882ff0011085f456e62799b62e,916026882ff0011085f456e62799b6ee,956066882ff0011085f456e62799b611,ad6066882ff0011085f456e62799b644"/>
     <sys_hub_flow_input action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -1649,6 +1664,8 @@
         <write_roles/>
         <xml_view>false</xml_view>
     </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=116026882ff0011085f456e62799b6ec"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=116026882ff0011085f456e62799b6ec"/>
     <sys_hub_action_instance action="delete_multiple" query="flow=116026882ff0011085f456e62799b6ec^sys_idNOT IN656066882ff0011085f456e62799b658"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
@@ -1656,7 +1673,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <comment/>
-        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
         <display_text/>
         <flow display_value="Update NeedIt Task on Reply">116026882ff0011085f456e62799b6ec</flow>
         <order>1</order>
@@ -1723,6 +1739,12 @@
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
         <value>work_notes={{Inbound Email_1.body_text}}</value>
     </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=656066882ff0011085f456e62799b658"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=656066882ff0011085f456e62799b658"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=116026882ff0011085f456e62799b6ec"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=116026882ff0011085f456e62799b6ec"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=116026882ff0011085f456e62799b6ec"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=116026882ff0011085f456e62799b6ec"/>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_116026882ff0011085f456e62799b6ec^sys_idNOT IN1d6066882ff0011085f456e62799b603,2d6066882ff0011085f456e62799b620,516066882ff0011085f456e62799b617,696066882ff0011085f456e62799b62a,6d6066882ff0011085f456e62799b64a,956066882ff0011085f456e62799b60d,ad6066882ff0011085f456e62799b640"/>
     <sys_documentation action="INSERT_OR_UPDATE">
         <element>body_text</element>
@@ -1737,7 +1759,7 @@
         <sys_created_on>2021-12-28 14:10:57</sys_created_on>
         <sys_id>1d6066882ff0011085f456e62799b603</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Body Text</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
@@ -1760,7 +1782,7 @@
         <sys_created_on>2021-12-28 14:10:57</sys_created_on>
         <sys_id>2d6066882ff0011085f456e62799b620</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Inbound Email</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
@@ -1783,7 +1805,7 @@
         <sys_created_on>2021-12-28 14:10:57</sys_created_on>
         <sys_id>516066882ff0011085f456e62799b617</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Subject</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
@@ -1806,7 +1828,7 @@
         <sys_created_on>2021-12-28 14:10:57</sys_created_on>
         <sys_id>696066882ff0011085f456e62799b62a</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>From address</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
@@ -1829,7 +1851,7 @@
         <sys_created_on>2021-12-28 14:10:57</sys_created_on>
         <sys_id>6d6066882ff0011085f456e62799b64a</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Target Record</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
@@ -1852,7 +1874,7 @@
         <sys_created_on>2021-12-28 14:10:57</sys_created_on>
         <sys_id>956066882ff0011085f456e62799b60d</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Target Table</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
@@ -1875,7 +1897,7 @@
         <sys_created_on>2021-12-28 14:10:57</sys_created_on>
         <sys_id>ad6066882ff0011085f456e62799b640</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>User</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
@@ -1885,8 +1907,12 @@
         <url/>
         <url_target/>
     </sys_documentation>
-    <sys_hub_flow action="update">
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_116026882ff0011085f456e62799b6ec"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_116026882ff0011085f456e62799b6ec"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_116026882ff0011085f456e62799b6ec"/>
+    <sys_hub_flow action="UPDATE">
         <sys_id>2c2f92082ff0011085f456e62799b601</sys_id>
         <latest_snapshot>116026882ff0011085f456e62799b6ec</latest_snapshot>
+        <compiler_build>glide-rome-06-23-2021__patch1-hotfix1-09-15-2021_09-16-2021_1434.zip</compiler_build>
     </sys_hub_flow>
 </record_update>
