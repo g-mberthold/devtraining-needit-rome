@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>Nutze Informationen aus vorherigen Teststep und stelle sie als default output zur Verfügung</notes>
+        <order>3</order>
+        <snapshot/>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-14 07:05:03</sys_created_on>
+        <sys_id>1a4ae7f31b0aa550eeeded74604bcbb7</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_atf_step_1a4ae7f31b0aa550eeeded74604bcbb7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-14 07:32:37</sys_updated_on>
+        <table/>
+        <test display_value="Variablen Übergabe">301823b31b0aa550eeeded74604bcb0c</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=1a4ae7f31b0aa550eeeded74604bcbb7"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>1a4ae7f31b0aa550eeeded74604bcbb7</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-14 07:05:03</sys_created_on>
+        <sys_id>705d23371b0aa550eeeded74604bcbf6</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-14 07:32:37</sys_updated_on>
+        <value>// You can use this step to execute a variety of server-side javascript tests including&#13;
+(function(outputs, steps, params, stepResult, assertEqual) {&#13;
+    // add test script here&#13;
+    //     var myNum = addThree(65);&#13;
+    //     gs.print('---&gt; ' + myNum + ' : MyNum');&#13;
+&#13;
+    // Sys_ID von Step 2 der jeweiligen Instance&#13;
+    //sys_id von ATF Step 2&#13;
+    var Step2_sys_id = '550a67731b0aa550eeeded74604bcbc6';&#13;
+    //Output variable 'record_id' ist die sys_id vom neuen sc_task&#13;
+    var element_id = steps(Step2_sys_id).record_id;&#13;
+&#13;
+    var myOutput = new GlideRecord('sc_task');&#13;
+&#13;
+    //Selektiere den Glide Record mit dem im step 2 erstellten Task&#13;
+    myOutput.get(element_id);&#13;
+&#13;
+&#13;
+    var sctask = myOutput.getValue('number');&#13;
+    gs.info('Task =&gt; ' + sctask);&#13;
+    gs.info('element_id =&gt; ' + element_id);&#13;
+&#13;
+    var updated = myOutput.getValue('sys_updated_on');&#13;
+    gs.info('updated =&gt; ' + updated);&#13;
+&#13;
+    var correlation_id = myOutput.getValue('correlation_id');&#13;
+    correlation_id = correlation_id.replace("Assist-", ""); //without any expressions.&#13;
+    gs.info('correlation_id =&gt; ' + correlation_id);&#13;
+    gs.info('--------------------------');&#13;
+&#13;
+    //     var req_id = myOutput.get(steps(sysIdforStep2).record_id);&#13;
+    //     gs.print('req_id : ' + req_id);&#13;
+    //     assertEqual({&#13;
+    //         name: "task gr exists",&#13;
+    //         shouldbe: true,&#13;
+    //         value: myOutput.isValidRecord()&#13;
+    //     });&#13;
+&#13;
+    // 	Example collection of key/value pairs&#13;
+    // A key is always a string enclosed with quotes.&#13;
+    // Curly Brackets: { } represents an object of JSON string whereas &#13;
+    // Square Brackets : [ ] represents an array of values of JSON string.&#13;
+	&#13;
+    var jsonObj = {&#13;
+        "key": "value"&#13;
+    };&#13;
+    gs.info('jsonObj =&gt; ' + jsonObj);&#13;
+    gs.info('Inhalt von jsonObj =&gt; ' + JSON.stringify(jsonObj));&#13;
+&#13;
+    var jsonObject = {&#13;
+        "key1": "value1",&#13;
+        "array1": [{&#13;
+            "key2": "value2"&#13;
+        }, {&#13;
+            "key3": "value3"&#13;
+        }]&#13;
+    };&#13;
+    gs.info('Inhalt von jsonObject =&gt; ' + JSON.stringify(jsonObject, undefined, 2));&#13;
+&#13;
+    var res = new GlideRecord('sc_task');&#13;
+    res.addQuery('sys_id', 'Step2_sys_id');&#13;
+    res.orderByDesc("sys_updated_on");&#13;
+    res.setLimit(1);&#13;
+    res.query();&#13;
+&#13;
+    var jsonresult = res.getValue('number');&#13;
+    gs.info('jsonresult =&gt; ' + jsonresult);&#13;
+    gs.info('Inhalt von jsonresult =&gt; ' + JSON.stringify(jsonresult));&#13;
+&#13;
+    //     var startindex = jsonresult.indexOf("/api/now/table/incident/");&#13;
+    //     var endindex = jsonresult.indexOf("Cache-control");&#13;
+    //     jsonresult_response = jsonresult.substring(startindex, endindex);&#13;
+    //     gs.print('Inhalt von jsonresult_response =&gt; ' + JSON.stringify(jsonresult_response, undefined, 2));&#13;
+&#13;
+&#13;
+    //  return false;&#13;
+    // 	Überschreibe default output&#13;
+    outputs.record_id = correlation_id;&#13;
+    outputs.table = sctask;&#13;
+&#13;
+})(outputs, steps, params, stepResult, assertEqual);&#13;
+// uncomment the next line to execute this script as a jasmine test&#13;
+//jasmine.getEnv().execute();</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>1a4ae7f31b0aa550eeeded74604bcbb7</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-14 07:05:03</sys_created_on>
+        <sys_id>b85d23371b0aa550eeeded74604bcbf5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-14 07:05:03</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+</record_update>

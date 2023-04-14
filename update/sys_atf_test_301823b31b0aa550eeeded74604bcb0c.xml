@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test">
+    <sys_atf_test action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>https://www.servicenow.com/community/developer-forum/outputs-variable-of-atf-serverside-script/m-p/1441950/page/2&#13;
+https://www.servicenow.com/community/developer-articles/atf-custom-step-configuration-for-calling-server-scripts-with/ta-p/2324226&#13;
+https://www.servicenow.com/community/developer-blog/fetch-value-from-json/ba-p/2282127&#13;
+https://docs.servicenow.com/en-US/bundle/utah-application-development/page/administer/auto-test-framework/task/atf-use-script-include.html</description>
+        <enable_parameterized_testing>false</enable_parameterized_testing>
+        <name>Variablen Übergabe</name>
+        <parameters/>
+        <remember/>
+        <sys_class_name>sys_atf_test</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-14 06:48:44</sys_created_on>
+        <sys_id>301823b31b0aa550eeeded74604bcb0c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Variablen Übergabe</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_atf_test_301823b31b0aa550eeeded74604bcb0c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-14 06:48:44</sys_updated_on>
+    </sys_atf_test>
+    <sys_variable_value action="delete_multiple" query="document_key=301823b31b0aa550eeeded74604bcb0c"/>
+</record_update>

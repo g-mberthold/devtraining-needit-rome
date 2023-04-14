@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step_config">
+    <sys_atf_step_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <batch_order_constraint/>
+        <can_mutate_page>false</can_mutate_page>
+        <category display_value="Server">317c4dc20b202200a8d7a12cf6673aa8</category>
+        <class_name/>
+        <class_type>script</class_type>
+        <deprecated>false</deprecated>
+        <description_generator><![CDATA[function generateDescription() {
+    // the global variable 'step' represents the current glide record
+    var description = "";
+	// your code here
+	return description;
+}
+ generateDescription();
+]]></description_generator>
+        <html_description><![CDATA[<p>Übergabe von InputOuput Varaiablen an followed step</p>
+<ol style="list-style-position: inside;"><li>(Optional) To add input variables to this step config, scroll to the Input Variables tab, then click New. Fill out the required fields for the new variable, then click <span id="atf-create-custom-step__tjx_y5y_yw">Submit</span>. Repeat until you have added all the input variables needed.</li><li>(Optional) To control the order in which input variables appear on the New Step form, edit the values in the Order column for the Input Variables related list.</li><li>To add output variables to this step config, scroll to the Output Variables tab, then click New. Fill out the required fields for the new variable, then click <span id="atf-create-custom-step__kgr_1vy_yw">Submit</span>. Repeat until you have added all the output variables needed.</li></ol>]]></html_description>
+        <icon>icon-article-document</icon>
+        <inputs/>
+        <name>Config Variablen Übergabe</name>
+        <order>1</order>
+        <outputs/>
+        <step_env display_value="Server - Independent">6c2bcea1870312009dccc9ded0e3ecca</step_env>
+        <step_execution_generator><![CDATA[(function executeStep(inputs, outputs, stepResult, timeout) {
+    stepResult.setSuccess(true);
+	var gd = new GlideDate();
+    
+	outputs.u_first = "Test";
+    outputs.u_first_date = gd.getValue();
+	outputs.u_record_id = "output_Step4_record_ID";
+
+
+}(inputs, outputs, stepResult, timeout));]]></step_execution_generator>
+        <sys_class_name>sys_atf_step_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-14 07:09:59</sys_created_on>
+        <sys_id>77cdab771b0aa550eeeded74604bcbb9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Config Variablen Übergabe</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_atf_step_config_77cdab771b0aa550eeeded74604bcbb9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-14 07:09:59</sys_updated_on>
+        <template_reminder>Übergabe von InputOuput Varaiablen an followed step</template_reminder>
+        <type display_value="Test Step" name="sys_atf_step">163a8bbc44a11110a86688ad36699477</type>
+        <wizard_redirect/>
+    </sys_atf_step_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=77cdab771b0aa550eeeded74604bcbb9"/>
+    <sys_variable_value action="delete_multiple" query="document_key=77cdab771b0aa550eeeded74604bcbb9"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_atf_output_variable_77cdab771b0aa550eeeded74604bcbb9^id=77cdab771b0aa550eeeded74604bcbb9"/>
+</record_update>
